@@ -19,7 +19,7 @@
     </x-slot>
 
     <!-- Welcome / Role Context Banner -->
-    <div class="card jm-card mb-4 border-0 shadow-sm" style="background: linear-gradient(90deg, #f8fafc 0%, #edf2f7 100%);">
+    <div class="card jm-card mb-4 border-0 shadow-sm" style="background: linear-gradient(90deg, #fff5f5 0%, #fef2f2 100%); border-left: 4px solid var(--jm-red-primary) !important;">
         <div class="card-body p-3 p-md-4 d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
             <div class="d-flex align-items-center gap-3">
                 <div class="jm-brand-icon" style="width: 48px; height: 48px; font-size: 1.5rem;">
@@ -56,13 +56,13 @@
             <div class="card jm-card jm-card-stat border-total h-100">
                 <div class="card-body p-3">
                     <div class="d-flex align-items-center justify-content-between mb-2">
-                        <span class="text-muted small fw-semibold text-uppercase" style="font-size: 0.72rem;">Total Cases</span>
-                        <div class="jm-stat-icon-wrapper bg-light text-dark">
+                        <span class="text-danger-emphasis small fw-semibold text-uppercase" style="font-size: 0.72rem;">Total Cases</span>
+                        <div class="jm-stat-icon-wrapper bg-danger bg-opacity-10 text-danger">
                             <i class="bi bi-folder2"></i>
                         </div>
                     </div>
                     <div class="h3 fw-bold text-dark mb-1">{{ number_format($counts['total']) }}</div>
-                    <a href="{{ route('cases.index') }}" class="small text-decoration-none text-primary">
+                    <a href="{{ route('cases.index') }}" class="small text-decoration-none text-danger fw-semibold">
                         Registry directory &rarr;
                     </a>
                 </div>

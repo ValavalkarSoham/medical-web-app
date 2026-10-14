@@ -24,14 +24,14 @@
     <style>
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: linear-gradient(135deg, #0c2340 0%, #16365c 50%, #0d9488 100%);
+            background: linear-gradient(135deg, #2b040d 0%, #4c0519 45%, #881337 75%, #be123c 100%);
             min-height: 100vh;
         }
         .login-card {
             background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 14px;
+            box-shadow: 0 20px 30px -10px rgba(76, 5, 25, 0.35), 0 10px 15px -5px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(254, 205, 211, 0.7);
         }
     </style>
 </head>

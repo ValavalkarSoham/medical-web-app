@@ -1,29 +1,48 @@
 /**
  * Medical web app — Medical Case Management System
- * Custom Design System Stylesheet
+ * Custom Design System Stylesheet — Medical Red Theme
  * 
- * Palette:
- * - Navy-Blue Primary: #0c2340 (Main Header/Sidebar), #14355a (Brand Accent)
- * - Restrained Teal: #0d9488 (Interactive Highlights), #0f766e (Darker Teal)
- * - Light Surfaces: #ffffff (Cards/Tables), #f8fafc (Body Background)
- * - Muted Borders: #e2e8f0
+ * Medical Red Palette:
+ * - Deep Clinical Crimson / Burgundy: #2b040d, #4c0519 (Sidebar, Dark Surfaces)
+ * - Authoritative Medical Red: #991b1b, #b91c1c (Primary Actions, Headers, Highlights)
+ * - Surgical Ruby / Rose Accent: #e11d48, #be123c (Interactive Accents, Brand Glyphs)
+ * - Clinical Surfaces: #ffffff (Cards/Tables), #faf7f7 (Clean Clinical Body Background)
+ * - Warm Soft Borders: #f1dede
  */
 
 :root {
-    --jm-navy: #0c2340;
-    --jm-navy-dark: #081728;
-    --jm-navy-light: #16365c;
-    --jm-navy-hover: #1f4777;
-    --jm-teal: #0d9488;
-    --jm-teal-hover: #0f766e;
-    --jm-teal-light: #ccfbf1;
-    --jm-teal-text: #115e59;
-    --jm-bg: #f8fafc;
+    /* Bootstrap 5 Theme Variable Overrides */
+    --bs-primary: #991b1b;
+    --bs-primary-rgb: 153, 27, 27;
+    --bs-primary-text-emphasis: #7f1d1d;
+    --bs-primary-bg-subtle: #ffe4e6;
+    --bs-primary-border-subtle: #fecdd3;
+    --bs-link-color: #991b1b;
+    --bs-link-hover-color: #7f1d1d;
+
+    /* Medical Red Brand Tokens */
+    --jm-red-dark: #2b040d;
+    --jm-red-sidebar: #4c0519;
+    --jm-red-wine: #700b23;
+    --jm-red-primary: #991b1b;
+    --jm-red-hover: #b91c1c;
+    --jm-red-accent: #e11d48;
+    --jm-red-accent-hover: #be123c;
+    --jm-red-light: #ffe4e6;
+    --jm-red-subtle: #fff1f2;
+    --jm-red-text: #881337;
+
+    --jm-bg: #faf7f7;
     --jm-card-bg: #ffffff;
-    --jm-border: #e2e8f0;
+    --jm-border: #f1dede;
     --jm-text-main: #1e293b;
     --jm-text-muted: #64748b;
     --jm-sidebar-width: 260px;
+}
+
+::selection {
+    background-color: var(--jm-red-light);
+    color: var(--jm-red-text);
 }
 
 body {
@@ -33,19 +52,20 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Sidebar Styling */
+/* Sidebar Styling — Deep Clinical Red / Burgundy */
 .jm-sidebar {
     width: var(--jm-sidebar-width);
-    background: linear-gradient(180deg, var(--jm-navy-dark) 0%, var(--jm-navy) 100%);
-    color: #f1f5f9;
+    background: linear-gradient(180deg, var(--jm-red-dark) 0%, var(--jm-red-sidebar) 55%, var(--jm-red-wine) 100%);
+    color: #fce7eb;
     min-height: 100vh;
     transition: all 0.3s ease;
     z-index: 1030;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .jm-sidebar-brand {
     padding: 1.25rem 1.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -57,17 +77,17 @@ body {
     width: 38px;
     height: 38px;
     border-radius: 8px;
-    background: linear-gradient(135deg, var(--jm-teal) 0%, #14b8a6 100%);
+    background: linear-gradient(135deg, var(--jm-red-accent) 0%, var(--jm-red-accent-hover) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     color: #ffffff;
     font-size: 1.25rem;
-    box-shadow: 0 4px 6px -1px rgba(13, 148, 136, 0.3);
+    box-shadow: 0 4px 8px -1px rgba(225, 29, 72, 0.4);
 }
 
 .jm-sidebar .nav-link {
-    color: #cbd5e1;
+    color: #fecdd3;
     padding: 0.75rem 1.25rem;
     font-size: 0.9rem;
     font-weight: 500;
@@ -81,21 +101,21 @@ body {
 
 .jm-sidebar .nav-link:hover {
     color: #ffffff;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.12);
 }
 
 .jm-sidebar .nav-link.active {
     color: #ffffff;
-    background: var(--jm-teal);
+    background: linear-gradient(135deg, var(--jm-red-accent-hover) 0%, var(--jm-red-accent) 100%);
     font-weight: 600;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 8px rgba(190, 18, 60, 0.4);
 }
 
 .jm-sidebar .nav-heading {
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #94a3b8;
+    color: #fda4af;
     padding: 1rem 1.5rem 0.4rem;
     font-weight: 700;
 }
@@ -114,7 +134,7 @@ body {
     background-color: #ffffff;
     border-bottom: 1px solid var(--jm-border);
     padding: 0.75rem 1.5rem;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+    box-shadow: 0 1px 3px 0 rgba(153, 27, 27, 0.04);
 }
 
 /* Healthcare Cards */
@@ -122,7 +142,7 @@ body {
     background-color: var(--jm-card-bg);
     border: 1px solid var(--jm-border);
     border-radius: 10px;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 3px 0 rgba(76, 5, 25, 0.04);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -132,13 +152,13 @@ body {
 
 .jm-card-stat:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 8px -1px rgba(153, 27, 27, 0.1);
 }
 
-.jm-card-stat.border-total { border-top-color: var(--jm-navy); }
+.jm-card-stat.border-total { border-top-color: var(--jm-red-primary); }
 .jm-card-stat.border-planning { border-top-color: #f59e0b; }
-.jm-card-stat.border-review { border-top-color: #3b82f6; }
-.jm-card-stat.border-approved { border-top-color: #6366f1; }
+.jm-card-stat.border-review { border-top-color: var(--jm-red-accent); }
+.jm-card-stat.border-approved { border-top-color: #8b5cf6; }
 .jm-card-stat.border-completed { border-top-color: #10b981; }
 
 .jm-stat-icon-wrapper {
@@ -151,30 +171,38 @@ body {
     font-size: 1.25rem;
 }
 
-/* Buttons */
+/* Buttons — Medical Red Hierarchy */
 .btn-medical-primary, .btn-jajal-primary {
-    background-color: var(--jm-navy);
-    border-color: var(--jm-navy);
+    background-color: var(--jm-red-primary);
+    border-color: var(--jm-red-primary);
     color: #ffffff;
     font-weight: 500;
 }
 .btn-medical-primary:hover, .btn-medical-primary:focus,
 .btn-jajal-primary:hover, .btn-jajal-primary:focus {
-    background-color: var(--jm-navy-hover);
-    border-color: var(--jm-navy-hover);
+    background-color: var(--jm-red-hover);
+    border-color: var(--jm-red-hover);
+    color: #ffffff;
+}
+.btn-medical-primary:active,
+.btn-jajal-primary:active {
+    background-color: #7f1d1d;
+    border-color: #7f1d1d;
     color: #ffffff;
 }
 
-.btn-medical-teal, .btn-jajal-teal {
-    background-color: var(--jm-teal);
-    border-color: var(--jm-teal);
+.btn-medical-teal, .btn-medical-accent, .btn-medical-red, .btn-jajal-teal {
+    background-color: var(--jm-red-accent);
+    border-color: var(--jm-red-accent);
     color: #ffffff;
     font-weight: 500;
 }
 .btn-medical-teal:hover, .btn-medical-teal:focus,
+.btn-medical-accent:hover, .btn-medical-accent:focus,
+.btn-medical-red:hover, .btn-medical-red:focus,
 .btn-jajal-teal:hover, .btn-jajal-teal:focus {
-    background-color: var(--jm-teal-hover);
-    border-color: var(--jm-teal-hover);
+    background-color: var(--jm-red-accent-hover);
+    border-color: var(--jm-red-accent-hover);
     color: #ffffff;
 }
 
@@ -185,14 +213,14 @@ body {
     border: 1px solid #fde68a;
 }
 .badge-status-review {
-    background-color: #dbeafe;
-    color: #1e40af;
-    border: 1px solid #bfdbfe;
+    background-color: #ffe4e6;
+    color: #9f1239;
+    border: 1px solid #fecdd3;
 }
 .badge-status-approved {
-    background-color: #e0e7ff;
-    color: #3730a3;
-    border: 1px solid #c7d2fe;
+    background-color: #ede9fe;
+    color: #5b21b6;
+    border: 1px solid #ddd6fe;
 }
 .badge-status-completed {
     background-color: #d1fae5;
@@ -231,7 +259,7 @@ body {
     margin-bottom: 0;
 }
 .jm-table thead th {
-    background-color: #f8fafc;
+    background-color: #fdf5f6;
     color: #475569;
     font-weight: 600;
     font-size: 0.78rem;
@@ -244,11 +272,11 @@ body {
 .jm-table tbody td {
     padding: 0.85rem 1rem;
     vertical-align: middle;
-    border-bottom: 1px solid #f1f5f9;
+    border-bottom: 1px solid #fae8e8;
     font-size: 0.875rem;
 }
 .jm-table tbody tr:hover td {
-    background-color: #f8fafc;
+    background-color: #fff1f2;
 }
 
 /* Form Styling */
@@ -259,14 +287,26 @@ body {
     margin-bottom: 0.35rem;
 }
 .form-control, .form-select {
-    border-color: #cbd5e1;
+    border-color: #e2caca;
     font-size: 0.875rem;
     border-radius: 6px;
     padding: 0.55rem 0.75rem;
 }
 .form-control:focus, .form-select:focus {
-    border-color: var(--jm-teal);
-    box-shadow: 0 0 0 0.2rem rgba(13, 148, 136, 0.15);
+    border-color: var(--jm-red-accent);
+    box-shadow: 0 0 0 0.2rem rgba(225, 29, 72, 0.16);
+}
+
+/* Pagination Overrides */
+.pagination .page-item.active .page-link {
+    background-color: var(--jm-red-primary);
+    border-color: var(--jm-red-primary);
+}
+.pagination .page-link {
+    color: var(--jm-red-primary);
+}
+.pagination .page-link:hover {
+    color: var(--jm-red-hover);
 }
 
 /* Responsive utilities */
